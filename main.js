@@ -56,12 +56,13 @@ var mainState = {
         // Call the 'playerDie' function when the player and an enemy overlap
         game.physics.arcade.overlap(this.player, this.enemies, this.playerDie,
         null, this);
-        this.movePlayer();
+        
         // Tell Phaser that the player and the walls should collide
         game.physics.arcade.collide(this.player, this.walls);
         if (!this.player.inWorld) {
             this.playerDie();
         }
+        this.movePlayer();
     },
     movePlayer: function () {
         // If the left arrow key is pressed
